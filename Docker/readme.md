@@ -5,7 +5,7 @@
   
  --A single, unified codebase where all components of an application are tightly coupled and operate as a single unit.
 
->>>>Microservices Architecture:-
+  >>>>Microservices Architecture:-
 
  --An application is divided into smaller, independent services, each responsible for a specific business functionality and communicating over APIs.
 ------------------------------------------------------------------------------------------------------
@@ -13,9 +13,10 @@ Adv
  Monolithic:-
  1. Faster to develop initially due to simpler architecture.
  2. Easier to test end-to-end as everything is in one place.
- 3. Limited flexibility in adopting new technologies. 
+ 3. Limited flexibility in adopting new technologies.
+    
+ DisAdv:-
  
- DisAdv
  1.Difficult to scale parts of the application independently.
  2.A failure in one module can bring down the entire application.
  3.Simpler architecture but harder to manage as it grows.
