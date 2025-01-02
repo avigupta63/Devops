@@ -5,20 +5,27 @@ GitHub is a platform and a service rather than just a tool or software.
 1.INITIALIZEGIT/CLONE REPO
    clone an existing repo using git clone <repo-url>
    OR initializing new repo using git init command ---> .git
+   
  2. EDIT FILES:-
-    Work on ur project file in the working directory.----cd repo---touch new---gglh---
+    Work on ur project file in the working directory.----cd repo---touch new
  3.  STAGE CHANGES:-
    use git add or git add . to stage changes  git add <file_name>....multiple files---add----git add .
+
  4. Commit Changes:-
    used git commit -m "commit msg" to save ur changes to local repo.
+
  5. Push To Remote :-
    git push
+
  6. PULL UPDATES:-
     pull updated code from remote repo using command >>> git pull
+    
  7.  Branching:-
    create new branch for feature devlopment using >>  git branch <branch name>  ---default--main/master
+
  8. merge changes:-
    Mearge feature branches to main branch using git merge
+
  9. Resolve Conflict:-
     git log
      --------------------------------------------------------------------------------------------------------------
