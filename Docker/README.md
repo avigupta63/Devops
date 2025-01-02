@@ -373,18 +373,25 @@ Command	Description	Example
 
 docker pull	--Download an image from a registry.	
 ex- docker pull nginx:latest
+
 docker images	----List all local images.	
 ex- docker images
+
 docker rmi	-----Remove an image.	
 ex- docker rmi nginx:latest
+
 docker tag	-----Add a tag to an image.	
 ex- docker tag nginx:latest myrepo/nginx:v1
+
 docker commit	----Create a new image from a modified container.
 ex- 	docker commit <container-id> myimage:v1
+
 docker save	-----Save an image to a tar file.	
 ex- docker save -o nginx.tar nginx:latest
+
 docker load	-----Load an image from a tar file.	
 ex- docker load -i nginx.tar
+
 docker prune	---Remove unused images.	
 ex-docker image prune
 
