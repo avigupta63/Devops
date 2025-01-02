@@ -419,7 +419,7 @@ docker login -u anilbamnote
 3 Push the image
 
 docker push anilbamnote/web-server:latest 
-Removing an Image
+Removing an Image:- 
 
 docker rmi image name
 
