@@ -5,18 +5,18 @@
   
  --A single, unified codebase where all components of an application are tightly coupled and operate as a single unit.
 
-  >>>>Microservices Architecture:-
+ >>>>Microservices Architecture:-
 
  --An application is divided into smaller, independent services, each responsible for a specific business functionality and communicating over APIs.
+
 ------------------------------------------------------------------------------------------------------
 Adv
  Monolithic:-
  1. Faster to develop initially due to simpler architecture.
  2. Easier to test end-to-end as everything is in one place.
- 3. Limited flexibility in adopting new technologies.
-    
- DisAdv:-
+ 3. Limited flexibility in adopting new technologies. 
  
+DisAdv
  1.Difficult to scale parts of the application independently.
  2.A failure in one module can bring down the entire application.
  3.Simpler architecture but harder to manage as it grows.
@@ -27,7 +27,8 @@ Adv
  2. Easier to test individual services in isolation.
  3. High flexibility to experiment with new tools or frameworks.
  
- DisAdv
+DisAdv
+
  1.More complex to manage due to distributed nature.
  2.Complex to design, deploy, and monitor.
  
@@ -117,7 +118,7 @@ Key Features:
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 2. Container :-
-   >A container is a standard unit of software that packages up the application code and its dependencies (libraries, runtime,      configuration files) so the application can run reliably in any computing environment.
+   >A container is a standard unit of software that packages up the application code and its dependencies (libraries, runtime, configuration files) so the application can run reliably in any computing environment.
 
 Characteristics:
 
@@ -212,10 +213,7 @@ Step 4: The containers can be deployed in any environment, ensuring consistency.
   - Install Docker: `sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io`
   - Verify installation: `docker --version`
 
-### 7. Run First Container
-- **Command to Run:**
-  ```bash
-  docker run hello-world
+
   ```
 
 --------------------------------------------------------------------------------------------------------
@@ -224,33 +222,22 @@ KEY COMMAND FOR DOCKER:-
 
 Essential Docker Container Commands :-
 
+Essential Docker Container Commands
 Below are the essential Docker commands for container management:
-----------------------------------------------------------------------------------------------------------------------
-Command	                       Description	                                               Example
------------------------------------------------------------------------------------------------------------------------
-docker run	                 Create and start a container.	                            docker run nginx
 
-docker start	              Start an existing container.	                            docker start <container-id>
-
-docker stop	               Stop a running container.	                                    docker stop <container-id>
-
-docker ps	                 List running containers.	                                    docker ps
-
-docker ps -a	               List all containers, including stopped ones.	             docker ps -a
-
-docker rm	                 Remove a container.	                                           docker rm <container-id>--ex> docker rm -f f9ba 4816 6fd1
-
-docker logs	              Fetch the logs of a container.	                             docker logs <container-id>
-
-docker stats	            Show resource usage of running containers.	                     docker stats
-
-docker exec	        Execute a command in a running container.	                     docker exec -it <container-id> bash
-
-docker inspect	  Display detailed information about a container.	             docker inspect <container-id>
-
-docker cp	  Copy files between a container and the host m/c.	             docker cp <container-id>:<file-path> <host>
-
-docker prune	  Remove unused containers and resources.	           docker container prune ---remove stop containe and its all data.
+Command	Description	Example
+docker run	Create and start a container.	docker run nginx
+docker start	Start an existing container.	docker start <container-id>
+docker stop	Stop a running container.	docker stop <container-id>
+docker ps	List running containers.	docker ps
+docker ps -a	List all containers, including stopped ones.	docker ps -a
+docker rm	Remove a container.	docker rm <container-id>
+docker logs	Fetch the logs of a container.	docker logs <container-id>
+docker stats	Show resource usage of running containers.	docker stats
+docker exec	Execute a command in a running container.	docker exec -it <container-id> bash
+docker inspect	Display detailed information about a container.	docker inspect <container-id>
+docker cp	Copy files between a container and the host.	docker cp <container-id>:<file-path> <host>
+docker prune	Remove unused containers and resources.	docker container prune
 
 # docker system  prune
 >>o/p --WARNING! This will remove:
