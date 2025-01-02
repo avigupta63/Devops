@@ -225,26 +225,26 @@ KEY COMMAND FOR DOCKER:-
 Essential Docker Container Commands :-
 
 Below are the essential Docker commands for container management:
--------------------------------------------------------------------------------------------------------------------------
-Command	          Description	                                               Example
+----------------------------------------------------------------------------------------------------------------------
+Command	                       Description	                                               Example
 -----------------------------------------------------------------------------------------------------------------------
-docker run	  Create and start a container.	                            docker run nginx
+docker run	                 Create and start a container.	                            docker run nginx
 
-docker start	  Start an existing container.	                            docker start <container-id>
+docker start	              Start an existing container.	                            docker start <container-id>
 
-docker stop	  Stop a running container.	                                    docker stop <container-id>
+docker stop	               Stop a running container.	                                    docker stop <container-id>
 
-docker ps	  List running containers.	                                    docker ps
+docker ps	                 List running containers.	                                    docker ps
 
-docker ps -a	  List all containers, including stopped ones.	             docker ps -a
+docker ps -a	               List all containers, including stopped ones.	             docker ps -a
 
-docker rm	  Remove a container.	                                           docker rm <container-id>--ex> docker rm -f f9ba 4816 6fd1
+docker rm	                 Remove a container.	                                           docker rm <container-id>--ex> docker rm -f f9ba 4816 6fd1
 
-docker logs	  Fetch the logs of a container.	                             docker logs <container-id>
+docker logs	              Fetch the logs of a container.	                             docker logs <container-id>
 
-docker stats	  Show resource usage of running containers.	                     docker stats
+docker stats	            Show resource usage of running containers.	                     docker stats
 
-docker exec	  Execute a command in a running container.	                     docker exec -it <container-id> bash
+docker exec	        Execute a command in a running container.	                     docker exec -it <container-id> bash
 
 docker inspect	  Display detailed information about a container.	             docker inspect <container-id>
 
