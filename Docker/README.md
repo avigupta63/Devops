@@ -384,6 +384,7 @@ docker tag	-----Add a tag to an image.
 ex- docker tag nginx:latest myrepo/nginx:v1
 
 docker commit	----Create a new image from a modified container.
+
 ex- 	docker commit <container-id> myimage:v1
 
 docker save	-----Save an image to a tar file.	
@@ -425,7 +426,7 @@ docker rmi image name
 Saving and Loading Images
 
 docker save -o nginx_backup.tar nginx:latest
-Load an Image
+>Load an Image
 
 docker load -i nginx_backup.tar
 
