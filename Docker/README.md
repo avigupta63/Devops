@@ -404,7 +404,9 @@ docker pull ubuntu:20.04
 Tagging an Image
 
 docker tag ubuntu:20.04 myrepo/ubuntu:v1
+
 ex-docker tag nginx:latest anilbamnote/my-nginx-image
+
 Pushing an Image
 1 Login to Docker Hub
 
