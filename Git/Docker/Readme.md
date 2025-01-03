@@ -215,3 +215,381 @@ Step 4: The containers can be deployed in any environment, ensuring consistency.
   ```bash
   docker run hello-world
   ```
+KEY COMMAND FOR DOCKER:-
+
+Essential Docker Container Commands :-
+
+Below are the essential Docker commands for container management:
+
+Command	,Description, Example
+
+
+docker run ----------Create and start a container.
+ex-docker run nginx
+
+docker start------Start an existing container.	                         
+ex-  docker start 'container-id'
+
+docker stop---------  Stop a running container.	                                   
+ex- docker stop 'container-id'
+
+docker ps -------List running containers.	                                 
+ex-   docker ps
+
+docker ps -a -----List all containers, including stopped ones.	             
+ex-docker ps -a
+
+docker rm	-------  Remove a container.	                                      
+ex-docker rm 'container-id'
+ex> docker rm -f f9ba 4816 6fd1
+
+docker logs	-----  Fetch the logs of a container.	                         
+ex-docker logs 'container-id'
+
+docker stats  ----- Show resource usage of running containers.	                     
+ex-docker stats
+
+docker exec	------  Execute a command in a running container.	                    
+ex- docker exec -it 'container-id' bash
+
+docker inspect ---Display detailed information about a container.	           
+ex-  docker inspect 'container-id'
+
+docker cp ------Copy files between a container and the host m/c.	            
+ex- docker cp container-id:file-path host
+
+docker prune --Remove unused containers and resources.	           
+ex- docker container prune ---remove stop containe and its all data.
+
+# docker system  prune
+>>o/p --WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - unused build cache
+
+https://www.geeksforgeeks.org/docker-prune/
+
+ Practical Examples
+ 
+3.1. Creating and Running Containers:-
+
+docker run -d -p 8080:80 --name web-server nginx
+
+-d: Run container in detached mode.
+
+-p: Map port 8080 on the host to port 80 in the container.
+
+--name: Assign a name to the container.
+
+3.2. Stopping and Starting Containers:-
+
+docker stop web-server
+docker start web-server
+
+3.3. Listing Containers:-
+
+docker ps
+docker ps -a
+
+3.4. Removing Containers:-
+
+docker rm web-server
+docker rm $(docker ps -aq) # Remove all containers
+
+4. Interacting with Containers :-
+
+4.1. Execute Commands Inside a Container
+
+docker exec -it web-server bash
+Access the shell of the running container.
+
+4.2. Inspect a Container:-
+
+docker inspect web-server
+
+View configuration details and metadata of the container.
+
+4.3. Viewing Logs
+
+docker logs web-server
+
+5. Expose Applications to the World:-
+
+Use -p or -P with the docker run command to expose container ports to the host.
+Example:
+docker run -d -p 8080:80 nginx
+This exposes the container's port 80 to port 8080 on the host.
+
+docker exec -it c'ontainer-id' bash 
+----ls--cd /usr/share/nginx/html---cat > index.html----<h1>hi </h1>---exit----hit nginx page
+
+do same in http server----/usr/local/apache2/htdocs/index.html -----home dir of httpd inside docker .
+
+
+6. Troubleshooting Containers:-
+
+6.1. Monitoring Resource Usage
+
+docker stats
+
+6.2. Viewing Logs
+docker logs web-server
+
+6.3. Copying Files
+docker cp web-server:/path of home dir/in/container 
+
+docker cp index.html 481661a59780:/usr/share/nginx/html/
+
+7. Activities for Students
+
+Create a Container:
+
+Run an NGINX container and access it via the browser.
+
+Interact with a Container:
+Execute a command inside a running container using exec.
+
+Inspect a Container:
+Use docker inspect to analyze metadata.
+
+Experiment with Ports:
+Expose different ports and test access.
+
+Monitor Resource Usage:
+Use docker stats to observe real-time resource utilization.
+
+
+
+
+/usr/local/apache2/htdocs/index.html -----home dir of httpd inside docker .
+/usr/share/nginx/index.html --------hme dir of nginx in docker
+
+docker run -d -p 8080:80 nginx
+This exposes the container's port 80 to port 8080 on the host.
+
+docker exec -it 'container-id'bash 
+
+----ls--cd /usr/share/nginx/html---cat > index.html----<h1>hi </h1>---exit----hit nginx page
+
+
+
+Docker Image:-
+
+--A Docker Image is a lightweight, standalone, and executable package that includes everything needed to run an application: code, runtime, libraries, environment variables, and configurations.
+
+--It serves as a template to create Docker containers.
+
+
+manage Naming and Tagging:-
+
+Naming Convention: repository:tag (e.g., nginx:latest).
+
+Default Tag: If not specified, Docker assumes latest.
+
+3. Docker Repositories:-
+
+Docker Hub:-
+Public registry for sharing and managing images.
+
+Visit Docker Hub.
+
+Amazon Elastic Container Registry (ECR) :-
+AWS-managed private registry for storing container images.
+
+ACR,GCR,ECR ----Docker images store registory.
+
+
+
+Common Docker Image Commands
+
+Command	                     Description	                   Exampl
+----------------------------------------------------------------------------------------------------------
+docker pull	------Download an image from a registry.	                
+ex- docker pull nginx:latest
+
+docker images -----	List all local images.	                                
+ex-docker images
+
+docker rmi	---------Remove an image.	                                
+ex- docker rmi nginx:latest
+
+
+docker tag  ----	Add a tag to an image.	                                
+ex- docker tag nginx:latest myrepo/nginx:v1
+
+docker commit	-----Create a new image from a modified container.	         
+ex- docker commit 'container-id' myimage:v1
+
+docker save	------Save an image to a tar file.	                         
+ex- docker save -o nginx.tar nginx:latest
+
+docker load	-------Load an image from a tar file.	                 
+ex-docker load -i nginx.tar
+
+docker prune	------Remove unused images.	
+ex-docker image prune
+
+5. Managing Docker Images
+
+Pulling an Image
+docker pull ubuntu:20.04
+
+Tagging an Image
+
+docker tag ubuntu:20.04 myrepo_name/ubuntu:v1
+ex- docker tag nginx:latest anilbamnote/my-nginx-image
+
+Pushing an Image
+1 Login to Docker Hub
+docker login -u anilbamnote
+
+ 
+2 Tag to Image
+docker tag nginx:latest anilbamnote/web- server:latest
+   
+3 Push the image
+
+docker push anilbamnote/web-server:latest 
+
+Removing an Image
+
+docker rmi image name
+ex- ~# docker rmi anilbamnote/webserver-image:latest nginx:latest ubuntu:20.04 my-repo/ubuntu:v1 httpd:latest 
+
+Saving and Loading Images
+docker save -o nginx_backup.tar nginx:latest
+
+Load an Image
+docker load -i nginx_backup.tar
+
+Pruning Unused Images:-
+
+Remove Dangling Images
+docker image prune
+
+Remove All Unused Images
+docker image prune -a
+
+Introduction to Docker Network:-
+
+Docker networking allows containers to communicate with each other, the host system, and external networks. 
+
+It plays a vital role in enabling microservices and distributed applications to function seamlessly.
+
+Different Network Drivers:-
+
+Docker provides several network drivers for various use cases. 
+Each driver is optimized for different network configurations and scenarios:
+
+Bridge Network:-
+
+a> Default network driver for containers.
+b> Containers connected to the same bridge network can communicate with each other.
+c> Suitable for standalone containers.
+
+
+Host Network:-
+
+a> Removes network isolation between the container and the host.
+b> The container shares the host's network stack.
+c> Useful for performance-critical applications but reduces isolation.
+
+None Network:-
+
+a> No networking for the container.
+b> Completely isolated from the host and other containers.
+
+Overlay Network:-
+
+a> Enables communication between containers across multiple hosts.
+b> Used in Docker Swarm or Kubernetes environments.
+c> Ideal for distributed applications.
+
+Macvlan Network:-
+
+a> Assigns a MAC address to the container, making it appear as a physical device on the network.
+b> Provides direct layer 2 access for containers.
+
+Custom Network Plugins:-
+
+> Allows integration of third-party or custom networking solutions.
+> Docker Network Commands
+
+ Create a Network:-
+ 
+# Create a custom bridge network
+
+ sudo docker network create my_bridge_network
+ 
+
+# Create an overlay network
+
+sudo docker network create --driver overlay my_overlay_network
+
+
+List Networks
+
+# View all available networks
+
+sudo docker network ls
+
+
+Inspect a Network:-
+
+# Inspect details of a specific network
+
+sudo docker network inspect my_bridge_network
+
+
+Remove a Network:-
+
+# Remove a specific network
+
+sudo docker network rm my_bridge_network
+
+
+Run Containers with Specific Network
+
+# Run a container attached to a specific network
+
+sudo docker run --network my_bridge_network --name my_container -d nginx
+
+Practical Steps:-
+
+Example: Create and Use a Custom Bridge Network
+
+Create a custom bridge network:-
+
+sudo docker network create my_custom_network
+
+
+Run containers in the custom network:
+
+sudo docker run --network my_custom_network --name container1 -d nginx
+
+
+sudo docker run --network my_custom_network --name container2 -d nginx
+
+docker network create --subnet "192.168.0.0/16" --driver bridge newnetwork
+
+docker run -d -P --network host nginx:latest
+
+Verify network communication:
+
+sudo docker exec -it container1 ping container2
+
+Delete the network:
+
+sudo docker network rm my_custom_network
+
+Stop All Conatiner:-
+
+
+docker stop $(docker ps -aq)
+
+How to delete all conatiner:
+
+docker rm $(docker ps -aq)
+
+By understanding and leveraging Docker networking, you can build robust, scalable, and secure containerized applications.
