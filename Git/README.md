@@ -71,17 +71,17 @@ git remote-----show ur remote repo location
    
 git remote -v ----remotee repo url 
      
-git branch <branchPname>
+git branch 'branch-name'
      
 git branch 
      
-git checkout -b '<branch name>'
+git checkout -b 'branch-name'
      
-git switch <bramch name>
+git switch 'bramch-name'
      
 git push origin iata ----push chnages in reture branch...
      
-git merge <source-branch> <main/master-branch>
+git merge 'source-branch' 'main/master-branch'
      
 note:- first present in main branch ---then merge ur feture branch
      
@@ -93,7 +93,7 @@ git checkout main
      
 Use the following command to delete the branch locally:
      
-> git branch -d <feature-branch-name>
+> git branch -d 'feature-branch-name'
       
 2. Remove a Feature Branch from GitHub (Remote Repository)
 >  To delete the branch from the remote repository:
@@ -110,7 +110,7 @@ git branch -r
      
 PULLING branch FROM GITHUB
    	
-git branch -f <remote-repo-name> origin/<remote-branch name>
+git branch -f 'remote-repo-name' origin/'remote-branch name'
 ex- git branch -f test origin/test
    	
    	  
@@ -135,13 +135,13 @@ a> soft reset
 b> hard reset
     
 soft reset:-
-git reset --soft <commit-id>
+git reset --soft 'commit-id'
  
 ex--git reset  hlhg  ----to show hit >> git log --onelog
  
 hard reset:- new changes fulldeleted.
  
-git reset --hard <commit-id> -------n ot used in real-time-----used soft reset.
+git reset --hard 'commit-id' -------n ot used in real-time-----used soft reset.
 
  
  
