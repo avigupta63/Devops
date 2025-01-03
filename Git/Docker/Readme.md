@@ -189,7 +189,8 @@ Advantages:
 
 How Docker Works:-
 
-Step 1: A developer writes a Dockerfile to define an environment (e.g., install a specific Python version and libraries).
+Step 1: A developer writes a Dockerfile to define an environment 
+(e.g., install a specific Python version and libraries).
 Step 2: The Dockerfile is used to build a Docker image.
 Step 3: The Docker image is used to create and run Docker containers.
 Step 4: The containers can be deployed in any environment, ensuring consistency.
