@@ -322,9 +322,12 @@ docker run -d -p 8080:80 nginx
 This exposes the container's port 80 to port 8080 on the host.
 
 docker exec -it c'ontainer-id' bash 
-----ls--cd /usr/share/nginx/html---cat > index.html----<h1>hi </h1>---exit----hit nginx page
+ls--cd /usr/share/nginx/html---cat > index.html
 
-do same in http server----/usr/local/apache2/htdocs/index.html -----home dir of httpd inside docker .
+----<h1>hi </h1>---exit----hit nginx page
+
+do same in http server-
+---/usr/local/apache2/htdocs/index.html -----home dir of httpd inside docker .
 
 
 6. Troubleshooting Containers:-
@@ -370,7 +373,9 @@ This exposes the container's port 80 to port 8080 on the host.
 
 docker exec -it 'container-id'bash 
 
-----ls--cd /usr/share/nginx/html---cat > index.html----<h1>hi </h1>---exit----hit nginx page
+ls--cd /usr/share/nginx/html---cat > index.html
+
+<h1>hi </h1>---exit----hit nginx page
 
 
 
@@ -404,6 +409,7 @@ ACR,GCR,ECR ----Docker images store registory.
 Common Docker Image Commands
 
 Command	                     Description	                   Exampl
+
 ----------------------------------------------------------------------------------------------------------
 docker pull	------Download an image from a registry.	                
 ex- docker pull nginx:latest
@@ -485,35 +491,45 @@ Each driver is optimized for different network configurations and scenarios:
 Bridge Network:-
 
 a> Default network driver for containers.
+
 b> Containers connected to the same bridge network can communicate with each other.
+
 c> Suitable for standalone containers.
 
 
 Host Network:-
 
 a> Removes network isolation between the container and the host.
+
 b> The container shares the host's network stack.
+
 c> Useful for performance-critical applications but reduces isolation.
 
 None Network:-
 
 a> No networking for the container.
+
 b> Completely isolated from the host and other containers.
 
 Overlay Network:-
 
 a> Enables communication between containers across multiple hosts.
+
 b> Used in Docker Swarm or Kubernetes environments.
+
 c> Ideal for distributed applications.
 
 Macvlan Network:-
 
 a> Assigns a MAC address to the container, making it appear as a physical device on the network.
+
+
 b> Provides direct layer 2 access for containers.
 
 Custom Network Plugins:-
 
 > Allows integration of third-party or custom networking solutions.
+
 > Docker Network Commands
 
  Create a Network:-
