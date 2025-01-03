@@ -123,28 +123,29 @@ git reset:- this cmd is used to revert the commit that u did in ur local workspa
 note: if we used reset cmd we need commit id of just privious code which is ok..and running well fsg
     
 reset cmd used to move changes from commit area to working area.
-    -----------------------------------------------------
+
 dis Adv:-
-    1.it dosent make commit history
-    2.we cant revert code if we hit hard reset.
-    3.cant revert single commint
-    4.once code reset cant be undo that code.
-  --------------------------------------------------------  
+1.it dosent make commit history
+2.we cant revert code if we hit hard reset.
+3.cant revert single commint
+4.once code reset cant be undo that code.
+   
 type of reset cmd:-
-    a> soft reset
-    b> hard reset
+a> soft reset
+b> hard reset
     
 soft reset:-
 git reset --soft <commit-id>
  
- ex--git reset  hlhg  ----to show hit >> git log --onelog
+ex--git reset  hlhg  ----to show hit >> git log --onelog
  
- hard reset:- new changes fulldeleted.
+hard reset:- new changes fulldeleted.
  
- git reset --hard <commit-id> -------n ot used in real-time-----used soft reset.
- ------------------------------------------------------------------------------------
+git reset --hard <commit-id> -------n ot used in real-time-----used soft reset.
+
  
- GIT REVERT:- thsi cmd is used when  we want to revert those commit that we want to go back tha code in working area .
+ 
+GIT REVERT:- this cmd is used when  we want to revert those commit that we want to go back tha code in working area .
  
  
 > if we revert single commit then used revert cmd.
@@ -152,7 +153,7 @@ git reset --soft <commit-id>
  
 >  git reset removes the commit historywhen we are reseting the changes and revert will retain the commit history after reverting the commits.
  
-git revert <commit-id> ----used --git log --oneline -----show commoit -id.
+git revert <commit-id> ----used command ,git log --oneline  to -----show commit -id.
  
 Adv:-
  1. maintain comit history
