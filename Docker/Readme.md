@@ -202,14 +202,14 @@ Step 4: The containers can be deployed in any environment, ensuring consistency.
 ### 6. Install Docker Engine
 
 - **Installation Steps:**
----
+```
   - Update your system: `sudo apt-get update`
   - Install prerequisites: `sudo apt-get install apt-transport-https ca-certificates curl software-properties-common`
   - Add Docker's GPG key: `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg`
   - Set up the Docker repository: `echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`
   - Install Docker: `sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io`
   - Verify installation: `docker --version`
----
+ ```
 ### 7. Run First Container
 - **Command to Run:**
   ```bash
@@ -236,8 +236,10 @@ ex- docker stop 'container-id'
 docker ps -------List running containers.	                                 
 ex-   docker ps
 
-docker ps -a -----List all containers, including stopped ones.	             
-ex-docker ps -a
+docker ps -a -----List all containers, including stopped ones.
+```bash	             
+docker ps -a
+```
 
 docker rm	-------  Remove a container.	                                      
 ex-docker rm 'container-id'
