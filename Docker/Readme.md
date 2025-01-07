@@ -637,7 +637,8 @@ Lists all volumes available on the host.
 
 Create Volume:
 ---
-#docker volume create <volume_name>
+
+docker volume create <volume_name>
 ---
 
 Creates a new volume with the specified name.
@@ -645,34 +646,38 @@ Creates a new volume with the specified name.
 Inspect Volume:-*****
 
 ...
-#docker volume inspect <volume_name>
+docker volume inspect <volume_name>
 ...
 Displays detailed information about the specified volume.
 
 
 Remove Volume:
 ...
-#docker volume rm <volume_name>
+docker volume rm <volume_name>
 ...
+
 Removes a specified volume.
 
 Prune Unused Volumes:
 ...
-#docker volume prune
+docker volume prune
 ...
+
 Removes all unused volumes to free up space.
 
 Practical Examples:--
 
 1. Create and Attach a Volume to a Container
 Create a volume:
+
 ...
-#docker volume create my_volume
+docker volume create my_volume
 ...
 
 Run a container with the volume attached:
 ...
-#docker run -it --name my_container -v my_volume:/data busybox 
+
+docker run -it --name my_container -v my_volume:/data busybox 
 ...
 
  
@@ -683,14 +688,16 @@ Write data to the volume: Inside the container:
 ...
 echo "Hello, Docker Volumes!" > /data/hello.txt
 ...
+
 Exit the container:
 
 
 2. Inspect the Volume:-
 
 Inspect the my_volume to verify its configuration:
+
 ...
-#docker volume inspect my_volume
+docker volume inspect my_volume
 ...
 
 3. Verify Data Persistence
@@ -698,13 +705,13 @@ Inspect the my_volume to verify its configuration:
 Start a new container with the same volume:
 
 ...
-#docker run -it -d -P --name new_container1 -v my_volume:/data nginx 
+docker run -it -d -P --name new_container1 -v my_volume:/data nginx 
 ...
 
 
 Check the data: Inside the container:
 ...
-#docker exec -it container-id /bin/bash 
+docker exec -it container-id /bin/bash 
 ...
 -----ls cd data---ls 
 ...
@@ -716,30 +723,32 @@ The text Hello, Docker Volumes! should be visible, demonstrating data persistenc
 4. Delete a Volume
 Stop any containers using the volume:
 ...
-#docker stop my_container
+docker stop my_container
 ...
 
 ...
-#docker rm my_container
+docker rm my_container
 ...
 
 Remove the volume:-
 ...
-#docker volume rm my_volume
+docker volume rm my_volume
 ...
 
-5. Prune Unused Volumes:-
+5.Prune Unused Volumes:-
 
 Remove all volumes not currently in use:
 ...
-#docker volume prune -f
+docker volume prune -f
 ...
 
 Using Volumes with the -v Option
+
 Bind Mount Example:
 ...
-#docker run -it --name bind_mount_example -v /host/path:/container/path nginux
+docker run -it --name bind_mount_example -v /host/path:/container/path nginux
 ...
+
 ...
 docker exec -it id bash
 ...
@@ -751,6 +760,7 @@ This binds a directory on the host machine (/host/path) to a directory in the co
 
 
 Anonymous Volume Example:
+
 ...
 docker run -it --name anonymous_volume -v /data busybox
 ...
@@ -758,14 +768,15 @@ docker run -it --name anonymous_volume -v /data busybox
 Docker creates an unnamed volume and mounts it to the /data directory in the container.
 
 Named Volume Example:
+
 ...
-#docker run -it --name named_volume_example -v my_volume:/data busybox
+docker run -it --name named_volume_example -v my_volume:/data busybox
 ...
 
 Uses a named volume (my_volume) and mounts it to /data in the container.
 
 
------------------------------------------------------------------------------------------------------
+
 Best Practices
 Use named volumes for better manageability.
 Avoid storing critical application data in anonymous volumes.
