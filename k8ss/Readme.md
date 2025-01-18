@@ -125,6 +125,7 @@ A proxy container (e.g., Envoy) that manages network traffic.
 Benefits:
 
 1.Decouples concerns and improves maintainability.
+
 2.Allows independent scaling and updates.
 
 
@@ -143,3 +144,21 @@ spec:
     image: fluentd
 ```    
 
+Run First Pod Using kubectl
+
+1.Create a Pod:
+
+``bash
+kubectl run nginx-pod --image=nginx --restart=Never
+```
+--image: Specifies the container image.
+--restart=Never: Ensures the creation of a standalone Pod.
+
+2.Verify Pod:
+```bash
+kubectl get pods
+```
+3. View Pod Details:
+```bash
+kubectl describe pod nginx-pod
+```
