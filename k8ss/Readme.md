@@ -307,3 +307,151 @@ Example: Node IP + Node Port allows access to services from outside the cluster.
 Integrates with cloud provider load balancers to expose services externally.
 
 Automatically assigns external IPs for access.
+
+Namespace
+-----------------------------------------------------------------------------------------
+Namespaces provide a way to divide cluster resources between multiple users or teams.
+
+Default Namespaces
+
+default: The default namespace for resources without a namespace.
+
+kube-system: For Kubernetes system resources.
+
+kube-public: For publicly accessible resources.
+
+Creating a Namespace
+
+```bash
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-namespace
+```
+
+ReplicationController and ReplicaSet
+----------------------------------------------------------------------------------------------
+ReplicationControllers and ReplicaSets ensure that the specified number of Pod replicas are running at all times.
+
+ReplicationController
+
+```bash
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: my-rc
+spec:
+  replicas: 3
+  selector:
+    app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: my-container
+          image: nginx:latest
+```
+Explanation:
+
+replicas: Specifies the desired number of Pods.
+
+selector: Matches labels to identify Pods.
+
+template: Describes the Pods to be created.
+
+ReplicaSet
+
+```bash
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-rs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: my-container
+          image: nginx:latest
+```
+
+Deployments vs StatefulSets, Writing Manifests, and Understanding DaemonSets
+----------------------------------------------------------------------------------------------
+Introduction
+
+In Kubernetes, different controllers manage specific workloads depending on the requirements of applications. Among the most commonly used are Deployments, StatefulSets, and DaemonSets. Each serves unique purposes in orchestrating containerized applications.
+
+Deployments vs StatefulSets
+
+Deployments
+
+A Deployment ensures a specified number of pod replicas are running at any given time. Deployments are best suited for stateless applications.
+
+Features of Deployments
+
+1.Stateless nature, meaning all pods are interchangeable.
+
+2.Easy scaling and updates with zero downtime.
+
+3.Fast rollback capability.
+
+4.Pods are recreated with new identities upon termination.
+
+
+Use Cases
+
+Web servers.
+APIs.
+Microservices with no data dependency.
+
+
+StatefulSets
+
+A StatefulSet is used for applications requiring unique identities and persistent storage for each pod. These are suited for stateful applications.
+
+Features of StatefulSets
+
+1.Maintains a stable identity for each pod.
+
+2.Supports persistent storage using PVCs (PersistentVolumeClaims).
+
+3.Ensures ordered deployment, scaling, and deletion of pods.
+
+4.Pod names are deterministic (e.g., pod-0, pod-1).
+
+
+Use Cases
+
+Databases (e.g., MySQL, MongoDB).
+
+Distributed systems (e.g., Kafka, ZooKeeper).
+
+Applications requiring strict ordering.
+
+
+Stateless vs Stateful Applications
+--------------------------------------------------------------------------------------------------
+1.Stateless Applications.
+
+2.Do not retain data between sessions.
+
+3.Pods are interchangeable and can be terminated or replaced without affecting the application.
+
+4.Example: A web server serving static pages.
+
+5.Stateful Applications
+
+6.Require data persistence and unique identities.
+
+7.Replacement pods need to access the same persistent storage and retain their identities.
+
+Example: A database like PostgreSQL where data must be retained even if the pod restarts.
+ 
