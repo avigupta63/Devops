@@ -225,33 +225,48 @@ Command	,Description, Example
 
 
 docker run ----------Create and start a container.
-ex-docker run nginx
+```bash
+docker run nginx
+```
 
-docker start------Start an existing container.	                         
-ex-  docker start 'container-id'
+docker start------Start an existing container.	
+```bash                         
+ docker start 'container-id'
+ ```
 
-docker stop---------  Stop a running container.	                                   
-ex- docker stop 'container-id'
+docker stop---------  Stop a running container.	
+```bash                                   
+ docker stop 'container-id'
+ ```
 
-docker ps -------List running containers.	                                 
-ex-   docker ps
+docker ps -------List running containers.	
+```bash                                  
+ docker ps
+```
 
 docker ps -a -----List all containers, including stopped ones.
 ```bash	             
 docker ps -a
 ```
 
-docker rm	-------  Remove a container.	                                      
-ex-docker rm 'container-id'
-ex> docker rm -f f9ba 4816 6fd1
+docker rm	-------  Remove a container.	
+```bash
+docker rm 'container-id'
+```
 
-docker logs	-----  Fetch the logs of a container.	                         
+
+
+docker logs	-----  Fetch the logs of a container.
+```bash	                         
 ex-docker logs 'container-id'
+```
+docker stats  ----- Show resource usage of running containers.	
+```bash                     
+docker stats
+```
 
-docker stats  ----- Show resource usage of running containers.	                     
-ex-docker stats
-
-docker exec	------  Execute a command in a running container.	                    
+docker exec	------  Execute a command in a running container.
+	                    
 ex- docker exec -it 'container-id' bash
 
 docker inspect ---Display detailed information about a container.	           
