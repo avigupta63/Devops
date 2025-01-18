@@ -1,5 +1,5 @@
 Orchestration Tool: Kubernetes
-
+----------------------------------------------------------------------------------------------------
 
 Introduction to Kubernetes
 
@@ -75,7 +75,7 @@ Ingress: For HTTP and HTTPS routing.
 Namespaces: For isolating resources within a cluster.
 
 Lifecycle of the Pods
-
+-------------------------------------------------------------------------------------------------
 1.Pending: The pod is accepted but waiting for resource allocation.
 
 2.Running: The pod has been assigned to a node, and containers are running.
@@ -88,6 +88,7 @@ Lifecycle of the Pods
 
 
 Introduction to Pods and Services
+----------------------------------------------------------------------------
 Pods
 A Pod is the smallest deployable unit in Kubernetes, encapsulating one or more containers with shared resources like storage and network.
 
