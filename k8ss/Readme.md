@@ -152,6 +152,7 @@ Run First Pod Using kubectl
 kubectl run nginx-pod --image=nginx --restart=Never
 ```
 --image: Specifies the container image.
+
 --restart=Never: Ensures the creation of a standalone Pod.
 
 2.Verify Pod:
