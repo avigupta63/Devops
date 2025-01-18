@@ -148,7 +148,7 @@ Run First Pod Using kubectl
 
 1.Create a Pod:
 
-``bash
+```bash
 kubectl run nginx-pod --image=nginx --restart=Never
 ```
 --image: Specifies the container image.
