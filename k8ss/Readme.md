@@ -212,3 +212,98 @@ Debugging:
 kubectl logs <pod-name>
 kubectl exec -it <pod-name> -- /bin/bash
 ```
+
+Kubernetes Service Types for Networking
+------------------------------------------------------------------------------------------
+1. ClusterIP
+Default service type.
+Exposes the service only within the cluster.
+
+Example:
+
+```bash
+apiVersion: v1
+kind: Service
+metadata:
+  name: clusterip-service
+spec:
+  selector:
+    app: my-svc
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+```
+
+2.NodePort
+
+Exposes the service on a static port on each node.
+
+Example:
+```bash
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport-service
+spec:
+  type: NodePort
+  selector:
+    app: my-svc
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+    nodePort: 30007
+```
+3.LoadBalancer
+
+Exposes the service externally using a cloud provider’s load balancer.
+
+Example:    
+```bash
+apiVersion: v1
+kind: Service
+metadata:
+  name: loadbalancer-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: my-svc
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+```
+
+Key Networking Components
+----------------------------------------------------------------------------------------------
+
+1. Pod IP
+   
+Each pod gets a unique IP address within the cluster.
+
+Enables direct communication between pods without port conflicts.
+
+
+2. Container Port
+
+The port exposed by the container inside the pod.
+
+Used for intra-pod communication.
+
+3. Node IP
+   
+IP address of the Kubernetes node.
+
+Used when accessing services exposed via NodePort or LoadBalancer.
+
+4. Node Port
+
+A static port on the node that forwards traffic to the service.
+
+Example: Node IP + Node Port allows access to services from outside the cluster.
+
+5. LoadBalancer
+Integrates with cloud provider load balancers to expose services externally.
+
+Automatically assigns external IPs for access.
