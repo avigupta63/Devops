@@ -785,3 +785,96 @@ Avoid storing critical application data in anonymous volumes.
 Regularly prune unused volumes to free disk space.
 Use volume inspection to troubleshoot volume-related issues.
 
+What is a Dockerfile?
+
+A Dockerfile is a text document that contains all the instructions required to build a Docker image. It automates the process of creating Docker images, ensuring consistency and repeatability.
+
+Key Instructions in a Dockerfile
+1. FROM
+
+Specifies the base image to use for building the Docker image.
+```shell
+FROM ubuntu:20.04
+```
+
+
+1. LABEL
+Adds metadata to the image.
+```shell
+LABEL maintainer="youremail@example.com"
+LABEL version="1.0"
+LABEL description="A simple example"
+```
+3. RUN
+  
+Executes a command during the build process.
+```shell
+RUN apt-get update && apt-get install -y curl
+```
+1. CMD
+Specifies the default command to run when a container is started. It is overridden by commands passed during runtime.
+```shell
+CMD ["echo", "Hello, World!"]
+```
+5. ENTRYPOINT
+Defines the main command that cannot be overridden. Allows passing arguments to the defined command.
+
+```shell
+ENTRYPOINT ["/bin/bash"]
+```
+6. ENV
+Sets environment variables.
+```shell
+ENV APP_ENV=production
+ENV APP_PORT=8080
+```
+7. ARG
+Defines build-time variables.
+```bash
+ARG VERSION=1.0
+RUN echo "Building version $VERSION"
+```
+8. COPY
+Copies files or directories from the local filesystem to the container.
+```bash
+COPY index.html /var/www/html/
+```
+9. ADD
+Similar to COPY, but can also extract TAR files and download remote files.
+```bash
+ADD app.tar.gz /app/
+```
+10. EXPOSE
+Declares the network port the container listens on.
+```bash
+EXPOSE 8080
+```
+11. USER
+Specifies the user to run the container as.
+```bash
+USER nonrootuser
+```
+12. WORKDIR
+Sets the working directory for subsequent instructions.
+```bash
+WORKDIR /app
+```
+
+
+Building a Docker Image
+Use the docker build command to create an image from a Dockerfile.
+```bash
+docker build -t my-image:1.0 .
+```
+Pushing a Docker Image to a Repository
+Use the docker push command to upload the image to a Docker registry (e.g., DockerHub).
+```bash
+docker tag my-image:1.0 username/my-image:1.0
+docker push username/my-image:1.0
+```
+Pulling a Docker Image
+
+Use the docker pull command to download an image from a registry.
+```bash
+docker pull username/my-image:1.0
+```
