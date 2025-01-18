@@ -108,10 +108,10 @@ ClusterIP: Exposes the service within the cluster.
 NodePort: Exposes the service on each node’s IP at a static port.
 
 LoadBalancer: Exposes the service to the internet using a cloud provider’s load balancer.
------------------------------------------------------------------------------------------------------
+
 
 Main Container and Sidecar Containers
-
+--------------------------------------------------------------------------------------
 Main Container
 The primary container that serves the main purpose of the application. Examples include application servers or web servers.
 
