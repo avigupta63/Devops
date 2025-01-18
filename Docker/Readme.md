@@ -878,3 +878,44 @@ Use the docker pull command to download an image from a registry.
 ```bash
 docker pull username/my-image:1.0
 ```
+
+Example Dockerfile
+```bash
+# Use an official Node.js runtime as a parent image
+FROM node:14
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy package.json and install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy the app source code
+COPY . ./
+
+# Expose the application port
+EXPOSE 3000
+
+# Start the application
+CMD ["npm", "start"]
+Example Dockerfile
+
+```
+
+
+Brief Introduction to Docker Compose
+
+
+Docker Compose is a tool that allows you to define and run multi-container Docker applications using a simple YAML file. With Docker Compose, you can configure and launch your entire application stack, including services, networks, and volumes, in a single command.
+
+Key Features of Docker Compose:
+
+1. Single Configuration: Define all services in a single docker-compose.yml file.
+   
+2. Multi-Container Management: Orchestrates multiple containers that form an application.
+   
+3.Easy to Use: Simple commands like docker-compose up and docker-compose down for deployment and teardown.
+
+4. Scalable: Allows scaling individual services.
+
