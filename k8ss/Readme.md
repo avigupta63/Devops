@@ -163,3 +163,51 @@ kubectl get pods
 ```bash
 kubectl describe pod nginx-pod
 ```
+
+Expose Pod Using kubectl expose
+
+Expose Pod:
+```bash
+kubectl expose pod nginx-pod --type=NodePort --port=80
+```
+
+--type=NodePort: Exposes the Pod on a static port.
+
+--port: Specifies the port the Pod listens on.
+
+Get Service Details:
+```bash
+kubectl get svc
+```
+
+Access the Pod:
+```bash
+Use the <NodeIP>:<NodePort> to access the exposed Pod.
+```
+
+n-Depth: kubectl Usage
+
+
+Common Commands
+
+View Resources:
+```bash
+kubectl get pods
+kubectl get svc
+kubectl get nodes
+```
+
+Apply Changes:
+```bash
+kubectl apply -f <manifest-file>.yaml
+```
+
+Delete Resources:
+```bash
+kubectl delete pod <pod-name>
+```
+Debugging:
+```bash
+kubectl logs <pod-name>
+kubectl exec -it <pod-name> -- /bin/bash
+```
