@@ -365,7 +365,7 @@ template: Describes the Pods to be created.
 
 
 
-ReplicaSet: quality based selector
+ReplicaSet: equality based selector
 
 ```bash
 apiVersion: apps/v1
