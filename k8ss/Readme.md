@@ -352,7 +352,9 @@ spec:
       containers:
         - name: my-container
           image: nginx:latest
-```
+          ports:
+            - containerPort: 80
+``` 
 Explanation:
 
 replicas: Specifies the desired number of Pods.
@@ -361,7 +363,9 @@ selector: Matches labels to identify Pods.
 
 template: Describes the Pods to be created.
 
-ReplicaSet
+
+
+ReplicaSet: quality based selector
 
 ```bash
 apiVersion: apps/v1
@@ -372,16 +376,43 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: my-app
+      app: my-app-rs
   template:
     metadata:
       labels:
-        app: my-app
+        app: my-app-rs
     spec:
       containers:
         - name: my-container
           image: nginx:latest
 ```
+
+repicaset: with set-based selector
+
+```bash
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-rs
+spec:
+  replicas: 3
+  selector:
+     matchExpressions:
+       - key: app
+         operator: In
+         values:
+          -  my-app-rs
+  template:
+    metadata:
+      labels:
+        app: my-app-rs
+    spec:
+      containers:
+        - name: my-container
+          image: nginx:latest
+```
+
+
 
 Deployments vs StatefulSets, Writing Manifests, and Understanding DaemonSets
 ----------------------------------------------------------------------------------------------
