@@ -13,8 +13,8 @@ RUN unzip /opt/apache-tomcat-9.0.98.zip -d /opt
 
 # Set up Tomcat and deploy the WAR file
 WORKDIR /opt/apache-tomcat-9.0.98/
-ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war /opt/apache-tomcat-9.0.98/webapps/
-ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.jar /opt/apache-tomcat-9.0.98/lib/mysql-connector.jar
+ADD https://docker-compose-anil-buckete.s3.us-east-2.amazonaws.com/student.war /opt/apache-tomcat-9.0.98/webapps/
+ADD https://docker-compose-anil-buckete.s3.us-east-2.amazonaws.com/mysql-connector+(1).jar /opt/apache-tomcat-9.0.98/lib/mysql-connector.jar
 COPY context.xml /opt/apache-tomcat-9.0.98/conf/context.xml
 
 # Set permissions and run Tomcat
