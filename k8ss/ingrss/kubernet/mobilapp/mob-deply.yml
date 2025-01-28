@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: mobileapp
-        image: rajatpzade/mobileapp:latest
+        image: anilbamnote/mobileapp:latest
         resources:
           limits:
             memory: "128Mi"
