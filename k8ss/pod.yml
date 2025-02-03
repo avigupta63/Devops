@@ -4,6 +4,8 @@ metadata:
   name: my-pod
   labels:
     app: my-app
+  namespace: dev
+
 spec:
   containers:
     - name: my-container
@@ -56,3 +58,27 @@ spec:
       port: 80    
       targetPort: 80
   type: NodePort    
+
+
+---
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+  selector:
+    app: my-app
+spec:
+  containers:
+  - name: my-container
+    image: httpd 
+    ports:
+    - containerPort: 80
+    - name: my-container
+      image: tocat
+      ports:
+        - containerPort: 8080
+  
+
+        
