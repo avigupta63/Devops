@@ -1,5 +1,5 @@
 variable "image_id" {
-    default = "ami-012967cc5a8c9f891"
+    default = "ami-0f214d1b3d031dc53"
 }
 
 variable "instance_type" {
@@ -7,17 +7,17 @@ variable "instance_type" {
 }
 
 variable "key_pair" {
-    default = "new-key-nv"
+    default = "faiz-ver-key"
 }
 
 variable "subnet_id_1" {
-    default = "subnet-050cc6904df99c2a8"
+    default = "subnet-0305744e17f051781"
 }
 
 variable "subnet_id_2" {
-    default = "subnet-091678d44aa5db41d"
+    default = "subnet-079213cd640f50927"
 }
 
 variable "vpc_id" {
-    default = "vpc-07a98d6f3268517fb"
+    default = "vpc-051e19e0e9663cc2c"
 }
