@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # oncdec-b18
 for-Devops-practice
 
@@ -54,3 +55,6 @@ Git (global information tracker) is software that serves as a tool for version c
 
 GitHub is a platform and a service rather than just a tool or software. 
 
+=======
+# Devops
+>>>>>>> 065d3d4c64cb4b422dcb71d106a8c13dbb75e1c8
